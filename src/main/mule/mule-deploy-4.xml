@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="2384c7e0-ea60-4007-9b95-cbc5659b8042" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mule-deploy-4Flow" doc:id="3542bc91-5be7-4580-ae99-6e4466c39732" >
+		<http:listener doc:name="Listener" doc:id="17ee73c4-972c-4251-8e74-57c549439fac" config-ref="HTTP_Listener_config" path="/deploy4"/>
+		<set-payload value="#['cloudhub deployment using mule mavin plugin is SUCCESS!!!']" doc:name="Set Payload" doc:id="71e91095-595a-4942-8971-2e24e118682f" />
+	</flow>
+</mule>
